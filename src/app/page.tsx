@@ -3,8 +3,10 @@
 import QuestionForm from "@/app/QuestionForm";
 import {MongoClient} from "mongodb";
 import {Card, CardBody, CardHeader} from "@nextui-org/card";
+import {cookies} from "next/headers";
 
 export default async function Home() {
+  await cookies();
   const client = new MongoClient((process.env.MONGODB_CONNECTION_STRING)!)
   const questions = await client.db("web-dev-speedrun")
     .collection("questions")
