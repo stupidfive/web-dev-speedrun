@@ -8,8 +8,8 @@ export default function QuestionForm() {
     <Form onSubmit={(e) => {
       e.preventDefault();
       const formData = new FormData(e.currentTarget);
-      const title = formData.get("title");
-      const content = formData.get("content");
+      const title = formData.get("title") as string;
+      const content = formData.get("content") as string;
       console.log({title, content})
       submitQuestion({
         title,
