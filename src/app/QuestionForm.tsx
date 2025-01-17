@@ -5,7 +5,9 @@ import {submitQuestion} from "@/app/SubmitQuestion";
 
 export default function QuestionForm() {
   return (
-    <Form onSubmit={(e) => {
+    <Form
+      className="w-full max-w-2xl flex flex-col gap-4"
+      onSubmit={(e) => {
       e.preventDefault();
       const formData = new FormData(e.currentTarget);
       const title = formData.get("title") as string;

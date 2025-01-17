@@ -14,10 +14,14 @@ export default async function Home() {
     .sort({createAt: -1})
     .toArray();
   return (
-    <div>
+    <div className="flex flex-col items-center gap-4">
+      <h1 className="font-bold text-3xl py-4">Web Dev Speedrun</h1>
       <QuestionForm />
+      <hr className="w-full max-w-2xl"/>
       {questions.map((question) => (
-        <Card key={question.createAt}>
+        <Card
+          className="w-full max-w-2xl"
+          key={question.createAt}>
           <CardHeader className="font-bold">{question.title}</CardHeader>
           <CardBody>{question.content}</CardBody>
         </Card>
